@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using Dapper;
+using WebApiBootcamp.Models;
 
 namespace WebApiBootcamp.Controllers
 {
@@ -11,7 +12,9 @@ namespace WebApiBootcamp.Controllers
     public class UsuarioController : ControllerBase
     {
 
-        static string connectionDB = @"Data Source=localhost;Initial Catalog=DB_ACCESO;User Id=sa;Password=12345OHdf%e;";
+
+        static string connectionDB = @"Data Source=DESKTOP-C8APSN0\SQLEXPRESS;Initial Catalog=DB_ACCESO;Integrated Security=true;";
+
 
         [HttpGet]
         [Route("listar")]
@@ -27,19 +30,6 @@ namespace WebApiBootcamp.Controllers
             return lst;
         }
 
-        [HttpGet]
-        [Route("listarXid")]
-
-        public dynamic ListarUsuariosXid(int Id)
-        {
-            return new Usuario
-            {
-                IdUsuario = Id,
-                Correo = "mauri",
-                Clave = "123"
-            };
-          
-        }
 
         [HttpPost]
         [Route("guardar")]
@@ -80,26 +70,6 @@ namespace WebApiBootcamp.Controllers
             }
         }
 
-        //[HttpPost]
-        //[Route("guardar")]
-        //public dynamic GuardarUsuarios(Usuario usuario)
-        //{
-        //    if (usuario.Correo == "algo@algo.com" && usuario.Contraseña == "password") {
-        //        usuario.IdUsuario = 2;
         
-        //        return new
-        //        {
-        //            success = true,
-        //            message = "Usuario registrado",
-        //            result = usuario
-        //        };
-        //    } else {
-        //        return new
-        //        {
-        //            success = false,
-        //            message = "Correo o contraseña incorrectos"
-        //        };
-        //    }
-        //}
     }
 }

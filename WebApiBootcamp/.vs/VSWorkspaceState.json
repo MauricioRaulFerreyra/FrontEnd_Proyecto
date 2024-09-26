@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers",
-    "\\Models"
+    "\\bin",
+    "\\Controllers"
   ],
-  "SelectedNode": "\\Controllers\\UsuarioController.cs",
+  "SelectedNode": "\\Controllers\\WebScrappingController.cs",
   "PreviewInSolutionExplorer": false
 }
